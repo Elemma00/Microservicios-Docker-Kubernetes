@@ -26,7 +26,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
 
 import com.emma.springcloud.mscv.usuarios.msvc_usuarios.controllers.UsuarioController;
 import com.emma.springcloud.mscv.usuarios.msvc_usuarios.models.entities.Usuario;

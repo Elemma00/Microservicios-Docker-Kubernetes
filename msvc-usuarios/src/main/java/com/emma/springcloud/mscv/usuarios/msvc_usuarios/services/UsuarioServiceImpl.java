@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.emma.springcloud.mscv.usuarios.msvc_usuarios.clients.CursoClienteRest;
 import com.emma.springcloud.mscv.usuarios.msvc_usuarios.models.entities.Usuario;
 import com.emma.springcloud.mscv.usuarios.msvc_usuarios.repositories.UsuarioRepository;
 
@@ -15,6 +16,9 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
+
+    @Autowired
+    private CursoClienteRest cursoClient;
 
     @Override
     @Transactional(readOnly = true)
@@ -38,7 +42,19 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Transactional
     public void eliminar(Long id) {
         usuarioRepository.deleteById(id);
+        cursoClient.eliminarCursoUsuarioPorId(id);
     }
 
+    @Override
+    @Transactional(readOnly = true)
+    public Boolean existeEmail(String email) {
+        return usuarioRepository.existsByEmail(email);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Usuario> listarPorIds(Iterable<Long> ids) {
+        return (List<Usuario>) usuarioRepository.findAllById(ids);
+    }
 
 }

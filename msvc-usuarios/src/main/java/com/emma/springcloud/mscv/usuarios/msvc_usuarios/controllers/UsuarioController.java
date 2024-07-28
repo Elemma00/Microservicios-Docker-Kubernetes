@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.emma.springcloud.mscv.usuarios.msvc_usuarios.models.entities.Usuario;
@@ -53,7 +54,7 @@ public class UsuarioController {
 
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> editar(@RequestBody Usuario usuario, @PathVariable Long id){
+    public ResponseEntity<?> editar(@Valid @RequestBody Usuario usuario, BindingResult result, @PathVariable Long id){
         Optional<Usuario> oUsuario = usuarioService.porId(id);
         if(oUsuario.isPresent()){
             Usuario usuarioDb = oUsuario.orElseThrow();
@@ -73,6 +74,11 @@ public class UsuarioController {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.notFound().build();
+    }
+
+    @GetMapping("/usuarios-por-curso")
+    public ResponseEntity<?> obtenerUsuariosPorCurso(@RequestParam List<Long> ids){
+        return ResponseEntity.ok(usuarioService.listarPorIds(ids));
     }
 
     private ResponseEntity<?> validation(BindingResult result) {

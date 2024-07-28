@@ -1,5 +1,6 @@
 package com.emma.springcloud.mscv.usuarios.msvc_usuarios.models.entities;
 
+import com.emma.springcloud.mscv.usuarios.msvc_usuarios.validations.ExistsByEmail;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.Column;
@@ -8,7 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 
  
@@ -20,15 +21,18 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
+    @NotEmpty
+    @Column(unique = true)
     private String nombre;
 
     @Column(unique = true)
-    @NotBlank
-    @NotEmpty
+    @Email
+    @ExistsByEmail
+    @NotEmpty(message = "no debe estar vacio")
     private String email;
-    
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+
+    @NotEmpty
+    // @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
     public Usuario() {
