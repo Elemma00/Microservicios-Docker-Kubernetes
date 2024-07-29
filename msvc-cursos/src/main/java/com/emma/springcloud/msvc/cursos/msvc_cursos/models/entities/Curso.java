@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.emma.springcloud.msvc.cursos.msvc_cursos.models.Usuario;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;

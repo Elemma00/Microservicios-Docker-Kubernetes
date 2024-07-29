@@ -1,7 +1,6 @@
 package com.emma.springcloud.mscv.usuarios.msvc_usuarios.models.entities;
 
 import com.emma.springcloud.mscv.usuarios.msvc_usuarios.validations.ExistsByEmail;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
