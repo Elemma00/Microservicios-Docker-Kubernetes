@@ -103,8 +103,12 @@ public class CursosController {
     }
 
     @PostMapping("/crear-usuario/{cursoId}")
-    public ResponseEntity<?> crearUsuario(@RequestBody Usuario usuario, @PathVariable Long cursoId) {
+    public ResponseEntity<?> crearUsuario(@Valid @RequestBody Usuario usuario, BindingResult result,
+            @PathVariable Long cursoId) {
         Optional<Usuario> o;
+        if (result.hasFieldErrors()) {
+            return validation(result);
+        }
         try {
             o = service.crearUsuario(usuario, cursoId);
         } catch (FeignException e) {
@@ -139,7 +143,8 @@ public class CursosController {
     }
 
     /**
-     * Desasignamos al usuario de cualquier curso que tenga 
+     * Desasignamos al usuario de cualquier curso que tenga
+     * 
      * @param id
      * @return
      */

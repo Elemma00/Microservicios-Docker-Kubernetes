@@ -1,0 +1,23 @@
+2024-08-11T00:47:03.032Z  INFO 1 --- [msvc-usuarios] [main] c.e.s.m.u.m.MsvcUsuariosApplication      : Starting MsvcUsuariosApplication v0.0.1-SNAPSHOT using Java 21 with PID 1 (/app/msvc-usuarios-0.0.1-SNAPSHOT.jar started by root in /app)
+2024-08-11T00:47:03.034Z  INFO 1 --- [msvc-usuarios] [main] c.e.s.m.u.m.MsvcUsuariosApplication      : No active profile set, falling back to 1 default profile: "default"
+2024-08-11T00:47:04.474Z  INFO 1 --- [msvc-usuarios] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-11T00:47:04.558Z  INFO 1 --- [msvc-usuarios] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 1 JPA repository interface.
+2024-08-11T00:47:04.881Z  INFO 1 --- [msvc-usuarios] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=601c2aef-7633-3e32-80f1-306928bf1d69
+2024-08-11T00:47:05.473Z  INFO 1 --- [msvc-usuarios] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8001 (http)
+2024-08-11T00:47:05.500Z  INFO 1 --- [msvc-usuarios] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-11T00:47:05.500Z  INFO 1 --- [msvc-usuarios] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-11T00:47:05.545Z  INFO 1 --- [msvc-usuarios] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-11T00:47:05.545Z  INFO 1 --- [msvc-usuarios] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2402 ms
+2024-08-11T00:47:05.764Z  INFO 1 --- [msvc-usuarios] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-11T00:47:06.649Z  INFO 1 --- [msvc-usuarios] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@13213f26
+2024-08-11T00:47:06.652Z  INFO 1 --- [msvc-usuarios] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-11T00:47:06.708Z  INFO 1 --- [msvc-usuarios] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-11T00:47:06.771Z  INFO 1 --- [msvc-usuarios] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-11T00:47:06.821Z  INFO 1 --- [msvc-usuarios] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-11T00:47:07.346Z  INFO 1 --- [msvc-usuarios] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-11T00:47:07.568Z  WARN 1 --- [msvc-usuarios] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-11T00:47:08.375Z  INFO 1 --- [msvc-usuarios] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-11T00:47:08.455Z  INFO 1 --- [msvc-usuarios] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-11T00:47:09.211Z  WARN 1 --- [msvc-usuarios] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-11T00:47:10.159Z  INFO 1 --- [msvc-usuarios] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8001 (http) with context path '/'
+2024-08-11T00:47:10.223Z  INFO 1 --- [msvc-usuarios] [main] c.e.s.m.u.m.MsvcUsuariosApplication      : Started MsvcUsuariosApplication in 7.814 seconds (process running for 8.776)

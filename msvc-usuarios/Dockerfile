@@ -1,6 +1,6 @@
-FROM openjdk:21-jdk-slim as builder
+FROM openjdk:21-jdk-slim AS builder
 
-WORKDIR /app
+WORKDIR /app/msvc-usuarios
 
 COPY ./.mvn ./.mvn
 COPY ./mvnw .
@@ -18,7 +18,9 @@ FROM openjdk:21-jdk-slim
 
 WORKDIR /app
 
-COPY --from=builder /app/target/msvc-usuarios-0.0.1-SNAPSHOT.jar .
+RUN mkdir ./logs
+
+COPY --from=builder /app/msvc-usuarios/target/msvc-usuarios*.jar .
 
 EXPOSE 8001
 

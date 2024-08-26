@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.emma.springcloud.msvc.cursos.msvc_cursos.models.Usuario;
 
-@FeignClient(name = "msvc-usuarios", url="http://localhost:8001")
+@FeignClient(name = "msvc-usuarios", url="msvc-usuarios:8001")
 public interface UsuarioClientRest {
 
     @GetMapping("/{id}")
