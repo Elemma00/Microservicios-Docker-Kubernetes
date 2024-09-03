@@ -1,3 +1,7 @@
 #!/bin/sh
-# Encuentra el archivo JAR que comienza con 'msvc-cursos' y lo ejecuta
-exec java -jar $(ls msvc-cursos*.jar)
+
+# Find the JAR file
+JAR_FILE=$(ls msvc-cursos*.jar)
+
+# Start the application
+exec java -jar $JAR_FILE

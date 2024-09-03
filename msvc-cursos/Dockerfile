@@ -24,13 +24,8 @@ COPY --from=builder /app/msvc-cursos/target/msvc-cursos*.jar .
 
 EXPOSE 8002
 
-# Copiar el script de entrada
 COPY entrypoint.sh /entrypoint.sh
 
-# Dar permisos de ejecución al script
 RUN chmod +x /entrypoint.sh
 
-# Usar el script como ENTRYPOINT
 ENTRYPOINT ["/entrypoint.sh"]
-
-# ENTRYPOINT ["java", "-jar", "msvc-cursos-0.0.1-SNAPSHOT.jar"]
